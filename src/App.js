@@ -16,6 +16,7 @@ function App() {
 
   const toggleTheme = () => setIsDark(!isDark);
 
+  
   const navItems = [
     { id: 'home', label: 'Home', icon: '🏠' },
     { id: 'education', label: 'Formation', icon: '🎓' },
@@ -35,7 +36,7 @@ function App() {
     phone: "+212 706218017",
     linkedin: "https://www.linkedin.com/in/hafsa-el-guallaf/",
     github: "https://github.com/HafOosa",
-    description: "Analyste de données et étudiante en Master Sécurité IT et Big Data à la FST Tanger, passionnée par les données et la sécurité. Expérience en analyse de données pour soutenir la prise de décision stratégique et améliorer les processus métiers. Compétente dans la traduction de données complexes en insights exploitables."
+    description: "Spécialiste émergente en Data Science et Cybersécurité, combinant formation académique solide et expérience terrain. Compétente dans le cycle complet du traitement de données sécurisées : collecte, analyse, visualisation et recommandations stratégiques. Expertise en infrastructure cloud, machine learning, et sécurisation des systèmes d'information."
   };
 
   const education = [
@@ -97,14 +98,14 @@ function App() {
     },
     {
       name: "Certification en Bases des données",
-      company: "Coursera",
+      company: "Google",
       logo: "📜",
       category: "Database",
       status: "completed"
     },
     {
       name: "Certification en Programmation Python",
-      company: "Coursera", 
+      company: "University of Michigan", 
       logo: "📜",
       category: "Programming",
       status: "completed"
