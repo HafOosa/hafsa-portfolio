@@ -934,7 +934,7 @@ function App() {
               <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
                 Hafsa
               </span>
-              <span className={isDark ? 'text-white' : 'text-gray-900'}>Dev</span>
+              <span className={isDark ? 'text-white' : 'text-gray-900'}>IT</span>
             </div>
 
             {/* Desktop Navigation */}
