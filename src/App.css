@@ -11,6 +11,8 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  /* Prevent horizontal scrolling */
+  overflow-x: hidden;
 }
 
 /* Custom scrollbar */
@@ -35,6 +37,17 @@ html {
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+/* Body optimizations */
+body {
+  /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+  /* Better touch scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+  /* Prevent zoom on input focus on iOS */
+  -webkit-text-size-adjust: 100%;
 }
 
 /* Focus styles */
@@ -55,4 +68,336 @@ a:focus {
 ::-moz-selection {
   background-color: #10b981;
   color: white;
+}
+
+/* RESPONSIVE MOBILE OPTIMIZATIONS */
+
+/* Base container fixes */
+.max-w-7xl,
+.max-w-6xl {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Small phones (320px - 480px) */
+@media (max-width: 480px) {
+  /* Typography adjustments */
+  .text-3xl { font-size: 1.5rem !important; }
+  .text-4xl { font-size: 1.75rem !important; }
+  .text-5xl { font-size: 2rem !important; }
+  .text-6xl { font-size: 2.25rem !important; }
+  .text-8xl { font-size: 2.5rem !important; }
+  
+  /* Spacing optimizations */
+  .px-4 { padding-left: 1rem; padding-right: 1rem; }
+  .px-6 { padding-left: 1rem; padding-right: 1rem; }
+  .py-8 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+  .py-16 { padding-top: 2rem; padding-bottom: 2rem; }
+  .py-20 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .py-32 { padding-top: 3rem; padding-bottom: 3rem; }
+  
+  /* Gap adjustments */
+  .gap-8 { gap: 1rem; }
+  .gap-16 { gap: 1.5rem; }
+  .space-x-8 > * + * { margin-left: 1rem; }
+  .space-y-8 > * + * { margin-top: 1rem; }
+  
+  /* Profile image sizing */
+  .w-64 { width: 12rem !important; }
+  .h-64 { height: 12rem !important; }
+  .w-80 { width: 14rem !important; }
+  .h-80 { height: 14rem !important; }
+  .w-96 { width: 16rem !important; }
+  .h-96 { height: 16rem !important; }
+}
+
+/* Mobile phones (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Typography scaling */
+  .text-6xl { font-size: 2.5rem !important; }
+  .text-8xl { font-size: 3rem !important; }
+  
+  /* Container padding */
+  .px-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+  
+  /* Vertical spacing */
+  .py-16 { padding-top: 3rem; padding-bottom: 3rem; }
+  .py-20 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .py-32 { padding-top: 4rem; padding-bottom: 4rem; }
+}
+
+/* All mobile devices */
+@media (max-width: 768px) {
+  /* Disable animations for better performance */
+  .animate-float {
+    animation: none !important;
+  }
+  
+  /* Reduce transitions */
+  * {
+    transition-duration: 0.2s !important;
+  }
+  
+  /* Grid fixes */
+  .grid.lg\\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+  
+  .grid.md\\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .grid.lg\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Flex direction fixes */
+  .flex.sm\\:flex-row {
+    flex-direction: column;
+  }
+  
+  .flex.lg\\:flex-row {
+    flex-direction: column;
+  }
+  
+  /* Button improvements */
+  button,
+  a {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  /* Disable hover effects on touch */
+  .hover\\:scale-105:hover {
+    transform: none !important;
+  }
+  
+  .hover\\:shadow-2xl:hover {
+    box-shadow: none !important;
+  }
+  
+  /* Text alignment for mobile */
+  .text-left.sm\\:text-center {
+    text-align: center;
+  }
+  
+  /* Profile section adjustments */
+  .inset-12 { inset: 2rem; }
+  .inset-16 { inset: 2.5rem; }
+  
+  /* Floating elements positioning */
+  .-top-8 { top: -1rem; }
+  .-right-8 { right: -1rem; }
+  .-bottom-8 { bottom: -1rem; }
+  .-left-8 { left: -1rem; }
+  .-left-12 { left: -1.5rem; }
+  .-right-12 { right: -1.5rem; }
+  
+  /* Card and section spacing */
+  .rounded-3xl {
+    border-radius: 1.5rem;
+  }
+  
+  .p-8 {
+    padding: 1.5rem;
+  }
+  
+  /* Stats section improvements */
+  .flex.items-center.space-x-8 {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .w-px {
+    display: none; /* Hide dividers on mobile */
+  }
+  
+  /* Navigation improvements */
+  .space-x-6 > * + * {
+    margin-left: 1rem;
+  }
+  
+  .space-x-8 > * + * {
+    margin-left: 1rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid.lg\\:grid-cols-2 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .grid.lg\\:grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .text-6xl {
+    font-size: 3rem;
+  }
+  
+  .text-8xl {
+    font-size: 4rem;
+  }
+}
+
+/* Landscape mobile fixes */
+@media (max-width: 768px) and (orientation: landscape) {
+  .py-16 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+  .py-20 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+  .py-32 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+  
+  .min-h-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Reduce profile image size in landscape */
+  .w-64, .w-80, .w-96 {
+    width: 12rem !important;
+  }
+  
+  .h-64, .h-80, .h-96 {
+    height: 12rem !important;
+  }
+}
+
+/* Very large screens */
+@media (min-width: 1280px) {
+  .max-w-7xl {
+    max-width: 80rem;
+  }
+  
+  .max-w-6xl {
+    max-width: 72rem;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Improve rendering on retina displays */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-float {
+    animation: none !important;
+  }
+}
+
+/* Dark mode improvements */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #1f2937;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #10b981;
+  }
+}
+
+/* Print styles */
+@media print {
+  .fixed {
+    position: absolute;
+  }
+  
+  .animate-float {
+    animation: none !important;
+  }
+  
+  .bg-gradient-to-r {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Touch improvements for iOS */
+@supports (-webkit-touch-callout: none) {
+  /* iOS specific optimizations */
+  input,
+  textarea,
+  button {
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+  
+  .rounded-full {
+    border-radius: 9999px;
+  }
+  
+  .rounded-xl {
+    border-radius: 0.75rem;
+  }
+  
+  .rounded-2xl {
+    border-radius: 1rem;
+  }
+  
+  .rounded-3xl {
+    border-radius: 1.5rem;
+  }
+}
+
+/* Android specific optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Chrome on Android optimizations */
+  .backdrop-blur-sm,
+  .backdrop-blur-xl {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+}
+
+/* Performance optimizations */
+.fixed {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.transition-all {
+  will-change: transform, opacity;
+}
+
+/* Accessibility improvements */
+@media (max-width: 768px) {
+  /* Larger touch targets */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem;
+  }
+  
+  /* Better focus visibility */
+  button:focus,
+  a:focus {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+  }
+  
+  /* Text readability */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
 }
